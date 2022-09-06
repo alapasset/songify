@@ -10,7 +10,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "pinia": "^2.0.21",
+    "spotify-web-api-ts": "^1.4.5",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },

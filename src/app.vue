@@ -1,17 +1,30 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+
+const authStore = useAuthStore()
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">
-          Home
-        </RouterLink>
-        <RouterLink to="/login">
-          Login
-        </RouterLink>
+      <h1>Songify - Le premier blind test basé sur tes propres playlists Spotify</h1>
+      <nav
+        v-show="authStore.code"
+        class="navbar navbar-expand navbar-dark bg-dark"
+      >
+        <div class="navbar-nav">
+          <RouterLink
+            to="/"
+            class="nav-item nav-link"
+          >
+            Home
+          </RouterLink>
+          <a
+            class="nav-item nav-link"
+            @click="authStore.logout()"
+          >Logout</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -20,33 +33,4 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
 </style>

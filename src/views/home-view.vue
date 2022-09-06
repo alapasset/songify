@@ -8,9 +8,9 @@
 </script>
   
 <template>
-  Home View
+  <h1>HOMMMMMME</h1>
 </template>
   
-  <style scoped>
-  </style>
+<style scoped>
+</style>
   
